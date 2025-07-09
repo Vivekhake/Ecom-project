@@ -1,0 +1,102 @@
+/* Full-page layout with gradient background */
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Login form card */
+form {
+  background-color: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  animation: slideIn 0.7s ease-out;
+  text-align: center;
+}
+
+/* Labels */
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Inputs */
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  background-color: #f5f5f5;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #7f5af0;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(127, 90, 240, 0.2);
+  outline: none;
+}
+
+/* Submit button */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #7f5af0, #5df0f3);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(to right, #5df0f3, #7f5af0);
+}
+
+/* Register link styling */
+a {
+  display: block;
+  margin-top: 16px;
+  color: #444;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+a span {
+  color: #7f5af0;
+  font-weight: bold;
+}
+
+a:hover span {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
