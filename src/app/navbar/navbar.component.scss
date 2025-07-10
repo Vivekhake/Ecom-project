@@ -1,59 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
 .navbar {
   background-color: #2874f0;
   padding: 10px 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   color: white;
+  gap: 30px;
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
+  color: white;
+  flex-shrink: 0;
+}
+
+.search-bar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar input {
+  width: 100%;
+  max-width: 500px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 14px;
+}
+
+.search-bar button {
+  padding: 8px 16px;
+  background-color: #ff9f00;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li {
-  position: relative;
+  align-items: center;
+  gap: 50px;
+  flex-shrink: 0;
+  margin-right: 10rem;
 }
 
 .nav-links a {
-  color: white;
   text-decoration: none;
-  padding: 10px 15px;
-  display: block;
-  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  padding: 8px;
 }
 
-/* Dropdown is hidden by default */
+.dropdown {
+  position: relative;
+}
+
 .dropdown-menu {
   display: none;
   position: absolute;
-  background-color: white;
   top: 100%;
   left: 0;
-  min-width: 200px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-}
-
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-menu {
-  display: block;
+  background-color: white;
+  color: black;
+  padding: 25px 0;
+  list-style: none;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 180px;
 }
 
 .dropdown-menu li a {
-  color: black;
-  padding: 10px;
   display: block;
+  padding: 8px 16px;
+  color: black;
+  text-decoration: none;
 }
 
 .dropdown-menu li a:hover {
   background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.login-btn {
+  padding: 6px 16px;
+  background-color: white;
+  color: #2874f0;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #e1e1e1;
 }
