@@ -7,8 +7,6 @@ bootstrapApplication(AppComponent, {
   ...appConfig,
   providers: [
     ...(appConfig.providers || []),
-    provideHttpClient(),
-    provideHttpClient(withFetch()),
+    provideHttpClient(withFetch()), // ✅ only this one
   ],
 }).catch((err) => console.error(err));
-// this replaces HttpClientModule in standalone setup
