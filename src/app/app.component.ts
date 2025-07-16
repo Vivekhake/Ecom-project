@@ -11,17 +11,7 @@ import { MobileoffersComponent } from './mobileoffers/mobileoffers.component';
 
 @Component({
   selector: 'app-root',
-  imports: [
-    RouterOutlet,
-    ToastMessageComponent,
-    NavbarComponent,
-    HomepageComponent,
-    SecondcartComponent,
-    ThirdPagecartComponent,
-    WearsComponent,
-    MobilepageComponent,
-    MobileoffersComponent,
-  ],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
