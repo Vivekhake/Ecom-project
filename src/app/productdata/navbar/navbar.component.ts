@@ -1,18 +1,18 @@
-import { Component, Inject, OnInit, PLATFORM_ID } from "@angular/core";
-import { Router } from "@angular/router";
-import { UserService } from "../user.service";
-import { Comment } from "@angular/compiler";
-import { CommonModule, isPlatformBrowser } from "@angular/common";
-import { CartService } from "../cart.service";
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from '../../user.service';
+import { Comment } from '@angular/compiler';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CartService } from '../../cart.service';
 
 @Component({
-  selector: "app-navbar",
-  templateUrl: "./navbar.component.html",
-  styleUrls: ["./navbar.component.scss"],
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.scss'],
   imports: [CommonModule],
 })
 export class NavbarComponent implements OnInit {
-  userName: string = "";
+  userName: string = '';
   isLoggedIn: boolean = false;
   cartCount: number = 0;
 
@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     // Run only in browser
     if (isPlatformBrowser(this.platformId)) {
-      const email = localStorage.getItem("email");
+      const email = localStorage.getItem('email');
 
       if (email) {
         this.isLoggedIn = true;
@@ -35,7 +35,7 @@ export class NavbarComponent implements OnInit {
             this.userName = name;
           },
           error: (err) => {
-            console.error("Failed to fetch user name:", err);
+            console.error('Failed to fetch user name:', err);
           },
         });
         this.cartService.cartCount$.subscribe((count) => {

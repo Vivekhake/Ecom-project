@@ -57,11 +57,9 @@
     color: #388e3c;
     margin-bottom: 15px;
   }
-
   .buttons {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     gap: 12px;
     margin-top: 10px;
 
@@ -71,9 +69,12 @@
       border: none;
       border-radius: 8px;
       font-size: 14px;
-      font-weight: bold;
+      font-weight: 600;
+      color: white;
+      background-color: #fb8c00;
       cursor: pointer;
       transition: transform 0.2s, background-color 0.3s ease;
+      height: 40px; // ✅ consistent height
 
       &:hover {
         transform: scale(1.05);
@@ -81,13 +82,19 @@
     }
 
     .add-to-cart {
-      background-color: #ff9800;
-      color: white;
+      background-color: #ff9800 !important;
+
+      &:hover {
+        background-color: #fb8c00;
+      }
     }
 
     .buy-now {
       background-color: #1976d2;
-      color: white;
+
+      &:hover {
+        background-color: #1565c0;
+      }
     }
   }
 }
