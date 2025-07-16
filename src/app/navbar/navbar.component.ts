@@ -1,8 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Inject, OnInit, PLATFORM_ID } from "@angular/core";
 import { Router } from "@angular/router";
 import { UserService } from "../user.service";
 import { Comment } from "@angular/compiler";
-import { CommonModule } from "@angular/common";
+import { CommonModule, isPlatformBrowser } from "@angular/common";
+import { CartService } from "../cart.service";
 
 @Component({
   selector: "app-navbar",
@@ -11,28 +12,44 @@ import { CommonModule } from "@angular/common";
   imports: [CommonModule],
 })
 export class NavbarComponent implements OnInit {
-  isLoggedIn = false;
-  userName = "";
+  userName: string = "";
+  isLoggedIn: boolean = false;
+  cartCount: number = 0;
 
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private cartService: CartService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
-  ngOnInit() {
-    // Fetch first name directly from DB-backed user session/token
-    this.userService.getFirstName().subscribe({
-      next: (firstName) => {
-        this.userName = firstName;
+  ngOnInit(): void {
+    // Run only in browser
+    if (isPlatformBrowser(this.platformId)) {
+      const email = localStorage.getItem("email");
+
+      if (email) {
         this.isLoggedIn = true;
-      },
-      error: (err) => {
-        this.isLoggedIn = false;
-        console.warn("User not logged in or session expired");
-      },
-    });
+
+        this.userService.getFirstName(email).subscribe({
+          next: (name) => {
+            this.userName = name;
+          },
+          error: (err) => {
+            console.error("Failed to fetch user name:", err);
+          },
+        });
+        this.cartService.cartCount$.subscribe((count) => {
+          this.cartCount = count;
+        });
+      }
+    }
   }
 
   logout() {
-    // Call logout API (if needed), then:
-    this.isLoggedIn = false;
-    window.location.reload();
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.clear();
+      this.isLoggedIn = false;
+      window.location.reload();
+    }
   }
 }

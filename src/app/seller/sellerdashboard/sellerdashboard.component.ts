@@ -4,7 +4,7 @@ import { RouterModule, Router } from "@angular/router";
 import { routes } from "../../app.routes";
 import { SellerHomeComponent } from "../seller-home/seller-home.component";
 import { DashboardComponent } from "../dashboard/dashboard.component";
-import { ProductpageComponent } from "../../productpage/productpage.component";
+import { ProductpageComponent } from "../productpage/productpage.component";
 import { OrderdetailsComponent } from "../orderdetails/orderdetails.component";
 
 @Component({

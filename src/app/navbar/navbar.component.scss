@@ -101,7 +101,7 @@ body {
 }
 .login-btn {
   padding: 6px 16px;
-  background-color: white;
+  background-color: black;
   color: #2874f0;
   border: none;
   border-radius: 4px;
@@ -110,6 +110,31 @@ body {
   transition: background-color 0.3s;
 }
 
-.login-btn:hover {
-  background-color: #e1e1e1;
+.cart-container {
+  position: relative;
+}
+
+.cart-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-left: 6px; /* space between 'Cart' and icon */
+}
+
+.cart-icon-wrapper i {
+  font-size: 18px; /* adjust icon size */
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+  line-height: 1;
+  min-width: 16px;
+  text-align: center;
 }
