@@ -6,14 +6,13 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class UserService {
-  private apiUrl = "http://localhost:8080/api/user/first-name";
+  private baseUrl = "http://localhost:8080";
 
   constructor(private http: HttpClient) {}
 
-  getFirstName(): Observable<string> {
-    return this.http.get(this.apiUrl, {
+  getFirstName(email: string): Observable<string> {
+    return this.http.get(`${this.baseUrl}/first-name?email=${email}`, {
       responseType: "text",
-      withCredentials: true, // important for session-based login
     });
   }
 }
