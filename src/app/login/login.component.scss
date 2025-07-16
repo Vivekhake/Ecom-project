@@ -1,52 +1,59 @@
-/* Full-page layout with gradient background */
-:host {
+/* Full-page centered layout */
+#login {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
   font-family: "Poppins", sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 /* Login form card */
 form {
-  background-color: #ffffff;
-  padding: 2.5rem 2rem;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+  padding: 3rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 400px;
-  animation: slideIn 0.7s ease-out;
-  text-align: center;
+  animation: fadeSlide 0.6s ease-in-out;
 }
 
-/* Labels */
+/* Label styling */
 label {
   display: block;
-  text-align: left;
   margin-bottom: 6px;
+  color: #444;
   font-size: 14px;
-  color: #333;
   font-weight: 500;
 }
 
-/* Inputs */
+/* Input styling */
 input[type="email"],
 input[type="password"] {
   width: 100%;
   padding: 12px 14px;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   border: 1px solid #ccc;
-  border-radius: 10px;
-  font-size: 14px;
-  background-color: #f5f5f5;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #f8f8f8;
+  color: #333;
   transition: all 0.3s ease;
 }
 
+input::placeholder {
+  color: #aaa;
+  font-size: 13px;
+  font-style: italic;
+}
+
 input:focus {
-  border-color: #7f5af0;
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(127, 90, 240, 0.2);
+  border-color: #6a5acd;
+  box-shadow: 0 0 8px rgba(106, 90, 205, 0.2);
   outline: none;
 }
 
@@ -54,34 +61,34 @@ input:focus {
 button[type="submit"] {
   width: 100%;
   padding: 12px;
-  background: linear-gradient(to right, #7f5af0, #5df0f3);
+  background: linear-gradient(to right, #6a5acd, #00c6ff);
   border: none;
-  border-radius: 50px;
+  border-radius: 30px;
   color: white;
-  font-weight: bold;
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.3s ease, transform 0.2s;
 }
 
-button:hover {
+button[type="submit"]:hover {
+  background: linear-gradient(to right, #00c6ff, #6a5acd);
   transform: translateY(-2px);
-  background: linear-gradient(to right, #5df0f3, #7f5af0);
 }
 
-/* Register link styling */
+/* Register link */
 a {
   display: block;
-  margin-top: 16px;
-  color: #444;
-  text-decoration: none;
+  margin-top: 1rem;
+  text-align: center;
   font-size: 14px;
-  transition: color 0.3s ease;
+  color: #333;
+  text-decoration: none;
 }
 
 a span {
-  color: #7f5af0;
-  font-weight: bold;
+  color: #6a5acd;
+  font-weight: 600;
 }
 
 a:hover span {
@@ -89,11 +96,11 @@ a:hover span {
   cursor: pointer;
 }
 
-/* Slide-in animation */
-@keyframes slideIn {
+/* Animation */
+@keyframes fadeSlide {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
