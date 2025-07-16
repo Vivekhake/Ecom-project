@@ -1,7 +1,7 @@
 .main {
   width: 35rem;
   height: 50rem;
-  background-color: aquamarine;
+  background: linear-gradient(to bottom, #e7f1fd, #f5faff);
   margin: 0.5rem;
 }
 .second-card {
@@ -23,7 +23,7 @@
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-  background-color: #f1f1f1;
+  background-color: white;
   height: 41rem;
   margin: 0.5rem;
 }
@@ -62,7 +62,7 @@
 }
 .card {
   padding: 20px;
-  background-color: white;
+  background: linear-gradient(to bottom, #e7f1fd, #f5faff);
   height: 17rem;
   width: 200px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
